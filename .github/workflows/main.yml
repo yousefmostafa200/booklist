@@ -6,17 +6,17 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: nginx-latest
     steps:
       - name: Login to DockerHub
         uses: docker/login-action@v1 
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: DOCKERHUB_TOKEN
+          password: a1a26e79-36d4-47ba-8656-007cb8a8f9e0
 
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: os2021/java-hello-world-from-github-actions:latest
+          tags: yousefmostafa/booklist
